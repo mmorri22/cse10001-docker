@@ -1,17 +1,17 @@
-# CSE 20133/20232 Development Environment README
+# CSE 10001 Development Environment README
 
-This repo contains a minimal dev environment setup for CSE 20133/20232. In particular, it provides the scripts to create the course Docker container.
+This repo contains a minimal dev environment setup for CSE 10001. In particular, it provides the scripts to create the course Docker container.
 
 ## Getting started
 
 ```
 # 1. build docker image locally
 cd docker
-./cse20133-build-docker
+./cse10001-build-docker
 
 # 2. start development environment
 cd ..
-./cse20133-run-docker
+./cse10001-run-docker
 ```
 
 For detailed setup instructions, refer to our Homework 0 setup guide!
