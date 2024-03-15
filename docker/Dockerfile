@@ -87,20 +87,20 @@ ENV LANG en_US.UTF-8
 # remove unneeded .deb files
 RUN rm -r /var/lib/apt/lists/*
 
-# set up passwordless sudo for user cse20133-user
-RUN useradd -m -s /bin/bash cse20133-user && \
-  echo "cse20133-user ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/cse20133-init
+# set up passwordless sudo for user cse10001-user
+RUN useradd -m -s /bin/bash cse10001-user && \
+  echo "cse10001-user ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/cse10001-init
 
 # create binary reporting version of dockerfile
-RUN (echo '#\!/bin/sh'; echo 'echo 1') > /usr/bin/cse20133-docker-version; chmod ugo+rx,u+w,go-w /usr/bin/cse20133-docker-version
+RUN (echo '#\!/bin/sh'; echo 'echo 1') > /usr/bin/cse10001-docker-version; chmod ugo+rx,u+w,go-w /usr/bin/cse10001-docker-version
 
 # git build arguments
-ARG USER=cse20133\ User
+ARG USER=cse10001\ User
 ARG EMAIL=nobody@example.com
 
 # configure your environment
-USER cse20133-user
+USER cse10001-user
 RUN rm -f ~/.bash_logout
 
-WORKDIR /home/cse20133-user
+WORKDIR /home/cse10001-user
 CMD ["/bin/bash", "-l"]
